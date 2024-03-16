@@ -1,0 +1,583 @@
+.make-reserve-btn {
+    background: linear-gradient(#ffd066, #FFC61A) !important;
+    color: #000 !important;
+    font-weight: 600 !important;
+}
+
+.home-text-title {
+    color: #fff !important;
+}
+
+.contact-map {
+    width: 100%;
+    height: 445px;
+}
+
+.home-book-input-label {
+    color: #FFC61A;
+    font-size: 13px;
+    font-weight: 400;
+    position: absolute;
+    left: 10px;
+    top: -12px;
+    background-color: #000000;
+    padding: 0 8px !important;
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+
+.search-result-data-area {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    background-color: #3b3a3a;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 20px 40px #00000027;
+    /* border: 1px solid #FFC61A; */
+    max-height: 297px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.search-result-data {
+    color: #ddd;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 13px 20px;
+    text-transform: capitalize;
+    background-color: transparent;
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+    text-align: left;
+    margin: 2px;
+    border-radius: 0px;
+}
+
+.search-result-data:hover {
+    background-color: #FFC61A !important;
+    color: #000 !important;
+}
+
+.search-result-data-area.custom {
+    margin-top: 2px;
+}
+
+.search-result-data-area.custom::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+    border-radius: 10px !important;
+}
+
+.search-result-data-area.custom::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: none !important;
+    background-color: #826200;
+}
+
+.search-result-data-area.custom::-webkit-scrollbar-track {
+    box-shadow: none !important;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.modal-table {
+    box-shadow: 0px 5px 10px #00000017;
+}
+
+.selected-location {
+    display: flex;
+    gap: 10px;
+}
+
+.selected-location-area {
+    background-color: #444444;
+    padding: 15px;
+    box-shadow: 0px 5px 10px #00000017;
+    margin-bottom: 20px;
+    /* border-radius: 10px; */
+}
+
+.selected-location-area h6 {
+    margin: 0 !important;
+    font-size: 15px !important;
+}
+
+.modal-content.dark {
+    border: 1px solid #FFC61A !important;
+}
+
+.text-white {
+    color: #FFF !important;
+}
+
+.modal-header.dark-theme {
+    background-color: #000;
+    border: 1px solid #FFC61A !important;
+    border-bottom-width: 0 !important;
+    border-radius: 0;
+}
+
+.modal-footer.dark-theme {
+    background-color: #000;
+    border: 1px solid #FFC61A !important;
+    border-top-width: 0 !important;
+}
+
+.modal-body.dark-theme {
+    background-color: #464646 !important;
+    border: 1px solid #FFC61A !important;
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important;
+}
+
+.modal-table.dark-theme {
+    background-color: #2a2a2a !important;
+    /* border: 1px solid #FFC61A !important; */
+    /* border-radius: 8px !important; */
+}
+
+.modal-table.dark-theme th,
+.modal-table.dark-theme td {
+    color: #c7c7c7 !important;
+}
+
+.modal-table.dark-theme th {
+    border: none !important;
+}
+
+.bg-black {
+    background-color: #000 !important;
+}
+
+.form-control.dark-theme {
+    width: 100% !important;
+    border-radius: 0px !important;
+    background-color: #4a4a4a;
+    border: 1px solid #FFC61A !important;
+    color: #c7c7c7 !important;
+    padding: 10px 16px !important;
+    height: auto !important;
+}
+
+.form-control:focus {
+    box-shadow: 0px 0px 0px 3px #ffc61a3a !important;
+}
+
+.react-datepicker {
+    border-radius: 0 !important;
+}
+
+.form-control.dark-theme::placeholder {
+    color: #8c8c8c !important;
+}
+
+.form-control.light-theme {
+    width: 100% !important;
+    border-radius: 0px !important;
+    background-color: #f6f6f6;
+    border: 1px solid #FFC61A !important;
+    color: #474747 !important;
+    padding: 10px 16px !important;
+    height: auto !important;
+}
+
+.form-control.light-theme::placeholder {
+    color: #8c8c8c !important;
+}
+
+.date-picker-custom .react-datepicker-wrapper {
+    width: 100% !important;
+}
+
+.verical-align-middle {
+    vertical-align: middle !important;
+}
+
+
+.btn.no-radius {
+    border-radius: 0px !important;
+}
+
+.btn-orange {
+    background: linear-gradient(#FFC61A, #ffda6b) !important;
+    font-weight: 500 !important;
+    border-radius: 10px !important;
+}
+
+.btn-orange.with-border {
+    background: #434343 !important;
+    color: #FFC61A !important;
+    border: 1px solid #FFC61A !important;
+}
+
+.modal-btn {
+    margin-bottom: 0 !important;
+    padding: 10px;
+    border-radius: 0px !important;
+    text-transform: capitalize !important;
+}
+
+.btn-orange:disabled,
+.btn-orange[disabled] {
+    background: #c7c7c7 !important;
+    color: #000 !important;
+    cursor: not-allowed !important;
+}
+
+.book-form-area {
+    background-color: #717171;
+    border: 1px solid #000 !important;
+    padding: 20px;
+    /* border-radius: 10px; */
+    margin-top: 20px;
+}
+
+.btn-success {
+    background-color: rgb(11, 159, 0);
+}
+
+/* ////////// */
+.react-datepicker__header {
+    background-color: #FFC61A !important;
+}
+
+.react-datepicker {
+    background-color: #2e2e2e !important;
+    border-color: #FFC61A !important;
+}
+
+.react-datepicker__day {
+    color: #fff !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+    background-color: #FFC61A !important;
+    color: #000 !important;
+}
+
+.react-datepicker__navigation-icon::before {
+    color: #000 !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+    background-color: #202020 !important;
+    color: #FFF !important;
+}
+
+.react-datepicker__navigation:focus {
+    outline: none !important;
+}
+
+.react-datepicker__day--selected {
+    background-color: #FFC61A !important;
+    color: #000000 !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {
+    background-color: #000000 !important;
+    color: #FFC61A !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item:hover {
+    background-color: #FFC61A !important;
+    color: #000 !important;
+}
+
+.react-datepicker__navigation-icon::before {
+    border-color: #000 !important;
+}
+
+.react-datepicker__day:hover {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+    border-radius: 10px !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: none !important;
+    background-color: #FFC61A;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list::-webkit-scrollbar-track {
+    box-shadow: none !important;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.make-reserve-btn:disabled,
+.make-reserve-btn[disabled] {
+    background: #DDD !important;
+    color: #000 !important;
+    border: none !important;
+    cursor: not-allowed;
+}
+
+
+/* ///////////// */
+.home-banner-area {
+    /* background-image: url('/public/images/_homepage-1-bg.jpg'); */
+}
+
+.booking-input {
+    background-color: #414141 !important;
+    border-radius: 10px !important;
+    color: #FFF !important;
+}
+
+.booking-input::placeholder {
+    color: #a5a5a5 !important;
+}
+
+.book-form-line {
+    border-bottom: 1px dashed #FFC61A;
+    margin-bottom: 25px;
+}
+
+.position-relative {
+    position: relative !important;
+}
+
+.book--form {
+    padding: 10px;
+}
+
+.feature-title-section,
+.feature-title-section h2 {
+    text-align: center !important;
+}
+
+.feature-title-section h2 span {
+    color: #FFC61A;
+    background-color: #000;
+    border-radius: 5px;
+    padding: 2px 10px;
+}
+
+.feature-title-section h6 {
+    margin: 0 !important;
+}
+
+.feature-title-section h4 {
+    text-align: center !important;
+    margin: 0;
+    font-weight: 600 !important;
+}
+
+.feature-title-section p {
+    margin-top: 30px;
+}
+
+.home-banner-text {
+    margin-top: 10%;
+}
+
+.home-banner-text h2 {
+    text-align: right !important;
+    color: #FFF !important;
+    font-size: 40px;
+}
+
+.home-banner-text h2 span {
+    color: #FFC61A !important;
+}
+
+.home-banner-text h6 {
+    color: #979797 !important;
+    text-align: right !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 991px) {
+
+    .home-banner-text h2,
+    .home-banner-text h6 {
+        text-align: center !important;
+    }
+
+    .home-banner-text {
+        margin-bottom: 80px;
+    }
+}
+
+.form-taxi-short {
+    overflow: visible !important;
+}
+
+.feature-content-section {
+    margin-top: 50px;
+}
+
+.home-calltoaction-area {
+    background-color: #FFC61A;
+    padding: 40px 0;
+}
+
+.image-gallery-area {
+    padding: 60px 0 80px 0;
+}
+
+.custom-hr {
+    background-color: #f5f5f5;
+    border-radius: 50px;
+    height: 15px;
+    width: 100%;
+    box-shadow: inset 0px 0px 10px #00000024;
+    transition: ease-in-out 0.5s;
+}
+
+.book--submit-btn {
+    outline: none !important;
+    border: none !important;
+}
+
+.book--submit-btn:disabled,
+.book--submit-btn[disabled] {
+    background-color: #DDD !important;
+    color: #000000 !important;
+}
+
+.book--submit-btn:disabled:hover {
+    background-color: #DDD !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+}
+
+.book--submit-btn:hover {
+    background-color: #000000 !important;
+    box-shadow: 0px 0px 15px #ffc61a51;
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+    background-color: rgb(0 0 0 / 68%) !important;
+    z-index: 999;
+    transition: 0.5s ease-in-out;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open {
+    width: 60%;
+    border-radius: 0px !important;
+    background-color: #ffffff8d !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    border-color: #FFC61A !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border-bottom-width: 3px !important;
+}
+
+.modal--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3c3c3c;
+    padding: 20px;
+}
+
+.modal--header h6 {
+    margin: 0;
+    color: #FFC61A;
+    text-transform: capitalize !important;
+}
+
+.close-button {
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: red !important;
+    font-size: 30px !important;
+    line-height: 0 !important;
+}
+
+.modal--body {
+    padding: 20px;
+    overflow: auto;
+}
+
+.max-height-modal {
+    max-height: 700px !important;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1367px) {
+    .modal--body {
+        max-height: 500px;
+    }
+}
+
+.selected-location-area.custom {
+    background-color: #9b9b9b !important;
+    border: #000000 1px solid;
+}
+
+.modal--footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px !important;
+    background-color: #3c3c3c;
+    border-radius: 0;
+}
+
+.book-table-area {
+    border: 1px solid #000;
+    /* border-radius: 10px !important; */
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+    font-size: 13px !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {
+    font-size: 13px !important;
+}
+
+.react-datepicker__header {
+    border-radius: 0 !important;
+}
+
+.modal-btn {
+    font-weight: 500 !important;
+}
+
+.modal-btn:disabled,
+.modal-btn[disabled] {
+    cursor: not-allowed !important;
+    background-color: #cecece !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+.not-customer {
+    color: #DDD;
+    font-size: 14px !important;
+    margin-bottom: 0;
+}
+
+.not-customer-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.not-customer-area .plz {
+    color: #DDD;
+}
+
+.not-customer-area a{
+    text-decoration: underline;
+    color: #FFC61A;
+}

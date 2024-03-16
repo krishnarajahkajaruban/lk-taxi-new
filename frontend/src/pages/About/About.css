@@ -1,0 +1,34 @@
+.sub-about-area {
+    height: 300px;
+    background-color: #ffffff;
+    border: 1px solid #FFC61A;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    transition: ease-in-out 0.5s;
+}
+
+.sub-about-area h3 {
+    color: #FFC61A;
+    text-align: center;
+    margin: auto !important;
+}
+
+.sub-about-area h6 {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    transition: ease-in-out 0.5s;
+}
+
+.sub-about-area p {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: #383838;
+    font-weight: 400;
+    transition: ease-in-out 0.5s;
+}
