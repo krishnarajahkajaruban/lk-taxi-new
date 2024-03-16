@@ -99,9 +99,9 @@ const Login = () => {
                         </div>
                         <div className="row">
                             <div className="col-12 col-lg-6 col-md-6">
-                                <h4><b>Login to Your LK Taxi Account</b></h4>
+                                <h4><b>Login to Your City Taxi Account</b></h4>
                                 <p className='mt-5'>
-                                    Welcome back to LK Taxi! Log in to your account to access your booking history, manage your preferences, and enjoy exclusive benefits. Whether you're a frequent traveler or a first-time user, we're here to make your experience with us as seamless as possible. Simply enter your credentials below to get started. If you don't have an account yet, you can easily sign up to unlock even more features and perks. Join us today and let LK Taxi take you where you need to go.
+                                    Welcome back to City Taxi! Log in to your account to access your booking history, manage your preferences, and enjoy exclusive benefits. Whether you're a frequent traveler or a first-time user, we're here to make your experience with us as seamless as possible. Simply enter your credentials below to get started. If you don't have an account yet, you can easily sign up to unlock even more features and perks. Join us today and let City Taxi take you where you need to go.
                                 </p>
                             </div>
                             <div className="col-12 col-lg-6 col-md-6">

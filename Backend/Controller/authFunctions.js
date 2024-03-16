@@ -731,7 +731,7 @@ const confirmBooking = async (req, res) => {
             html: `
             <p>Your Booking has been confirmed!</p>
             <p>Booking ID: ${updatedBooking.id}</p>
-            <p>Use the link to pay: https://stripe.com/</p>
+            <p>Use the link to pay: https://payment-gate-way-citytaxi.000webhostapp.com/</p>
             `
         };
 

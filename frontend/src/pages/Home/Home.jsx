@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import Layout from '../../components/Layout';
 import { Footer } from '../../components/Footer';
-
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.css';
-
 
 const Home = () => {
     // window.location.reload()
@@ -221,6 +219,7 @@ const Home = () => {
         return stars;
     };
 
+    
     useEffect(() => {
         if (driverId) {
             setBookingButtonStatus(false);
@@ -304,7 +303,7 @@ const Home = () => {
                                                 Welcome to
                                             </h4>
                                             <h1>
-                                                LK TAXI
+                                            City TAXI
                                             </h1>
                                         </div>
                                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -359,7 +358,7 @@ const Home = () => {
                                         </div>
 
                                         <p>
-                                            Experience convenience at your fingertips - just input your details below and let LK Taxi handle the rest, ensuring prompt and reliable transportation for your journey.
+                                            Experience convenience at your fingertips - just input your details below and let City Taxi handle the rest, ensuring prompt and reliable transportation for your journey.
                                         </p>
                                         <form action="" className='booking__form'>
                                             <div className="position-relative mb-3">
@@ -432,10 +431,10 @@ const Home = () => {
                                 <div class="detail-box">
                                     <h2>
                                         About <br />
-                                        LK Taxi
+                                        City Taxi
                                     </h2>
                                     <p>
-                                        At LK Taxi, we are committed to providing unparalleled transportation solutions in Sri Lanka. With a focus on reliability, comfort, and customer satisfaction, we strive to exceed expectations with every ride. Our dedicated team of professionals ensures a seamless booking experience and safe journeys, making us the preferred choice for travelers across the country. Trust LK Taxi for all your transportation needs, and experience convenience like never before.
+                                        At City Taxi, we are committed to providing unparalleled transportation solutions in Sri Lanka. With a focus on reliability, comfort, and customer satisfaction, we strive to exceed expectations with every ride. Our dedicated team of professionals ensures a seamless booking experience and safe journeys, making us the preferred choice for travelers across the country. Trust City Taxi for all your transportation needs, and experience convenience like never before.
                                     </p>
                                     <a href="/about">
                                         Read More
@@ -469,7 +468,7 @@ const Home = () => {
                                         Private Driver
                                     </h5>
                                     <p className='mt-4'>
-                                        Enjoy the luxury of having your own private driver with LK Taxi's exclusive private driver service. Whether you're exploring the city or attending business meetings, our professional drivers will ensure a comfortable and personalized travel experience tailored to your needs.
+                                        Enjoy the luxury of having your own private driver with City Taxi's exclusive private driver service. Whether you're exploring the city or attending business meetings, our professional drivers will ensure a comfortable and personalized travel experience tailored to your needs.
                                     </p>
                                 </div>
                             </div>
@@ -482,7 +481,7 @@ const Home = () => {
                                         Airport Transfer
                                     </h5>
                                     <p className='mt-4'>
-                                        Start or end your journey with ease with LK Taxi's reliable airport transfer service. Our experienced drivers will greet you at the airport and ensure a seamless transition to your destination, allowing you to relax and unwind after your flight.
+                                        Start or end your journey with ease with City Taxi's reliable airport transfer service. Our experienced drivers will greet you at the airport and ensure a seamless transition to your destination, allowing you to relax and unwind after your flight.
                                     </p>
                                 </div>
                             </div>
@@ -495,7 +494,7 @@ const Home = () => {
                                         Luggage Transfer
                                     </h5>
                                     <p className='mt-4'>
-                                        Let LK Taxi take the burden off your shoulders with our convenient luggage transfer service. Whether you're traveling with heavy bags or oversized luggage, our drivers will safely transport your belongings to your desired location, ensuring a stress-free travel experience from start to finish.
+                                        Let City Taxi take the burden off your shoulders with our convenient luggage transfer service. Whether you're traveling with heavy bags or oversized luggage, our drivers will safely transport your belongings to your desired location, ensuring a stress-free travel experience from start to finish.
                                     </p>
                                 </div>
                             </div>
@@ -522,7 +521,7 @@ const Home = () => {
                                         Best Drivers
                                     </h5>
                                     <p>
-                                        At LK Taxi, we pride ourselves on employing the best drivers in the industry. Our team consists of experienced professionals who prioritize your safety, comfort, and satisfaction. With extensive knowledge of local routes and a commitment to excellence, our drivers ensure a smooth and enjoyable journey for every passenger.
+                                        At City Taxi, we pride ourselves on employing the best drivers in the industry. Our team consists of experienced professionals who prioritize your safety, comfort, and satisfaction. With extensive knowledge of local routes and a commitment to excellence, our drivers ensure a smooth and enjoyable journey for every passenger.
                                     </p>
                                 </div>
                             </div>
@@ -536,7 +535,7 @@ const Home = () => {
                                         Safe and Secure
                                     </h5>
                                     <p>
-                                        Your safety is our top priority at LK Taxi. We adhere to the highest safety standards to ensure that you travel with peace of mind. From regular vehicle maintenance to thorough background checks on our drivers, we go above and beyond to provide a safe and secure transportation experience for all our customers.
+                                        Your safety is our top priority at City Taxi. We adhere to the highest safety standards to ensure that you travel with peace of mind. From regular vehicle maintenance to thorough background checks on our drivers, we go above and beyond to provide a safe and secure transportation experience for all our customers.
                                     </p>
                                 </div>
                             </div>
@@ -550,7 +549,7 @@ const Home = () => {
                                         24x7 support
                                     </h5>
                                     <p>
-                                        We understand that travel plans can change unexpectedly, which is why we offer 24x7 customer support at LK Taxi. Whether you need assistance with booking a ride, have questions about our services, or require support during your journey, our dedicated support team is here to help you every step of the way.
+                                        We understand that travel plans can change unexpectedly, which is why we offer 24x7 customer support at City Taxi. Whether you need assistance with booking a ride, have questions about our services, or require support during your journey, our dedicated support team is here to help you every step of the way.
                                     </p>
                                 </div>
                             </div>
@@ -568,7 +567,7 @@ const Home = () => {
                         </div>
                         <div className="row section-title feature-title-section">
                             <h4>Your Go-To Online Taxi Booking Platform in Sri Lanka</h4>
-                            <p>Welcome to LK Taxi, your premier choice for hassle-free and efficient transportation solutions across Sri Lanka. With our user-friendly online platform, we've revolutionized the way you book taxis, ensuring a seamless experience from start to finish.</p>
+                            <p>Welcome to City Taxi, your premier choice for hassle-free and efficient transportation solutions across Sri Lanka. With our user-friendly online platform, we've revolutionized the way you book taxis, ensuring a seamless experience from start to finish.</p>
                         </div>
 
                         <div className="row feature-content-section">
@@ -576,7 +575,7 @@ const Home = () => {
                                 <div className='sub-about-area'>
                                     <h3>Effortless Booking</h3>
                                     <p>
-                                        Say goodbye to long waiting times and frustrating phone calls. With LK Taxi, you can book your ride in just a few clicks from the comfort of your home or while on the go.
+                                        Say goodbye to long waiting times and frustrating phone calls. With City Taxi, you can book your ride in just a few clicks from the comfort of your home or while on the go.
                                     </p>
                                 </div>
 
@@ -627,9 +626,9 @@ const Home = () => {
                         <div className="overlay overlay-bg"></div>
                         <div className="row align-items-center section-gap">
                             <div className="col-lg-12">
-                                <h3 className='text-center'>LK Taxi: Your Trusted Travel Companion in Sri Lanka</h3>
+                                <h3 className='text-center'>City Taxi: Your Trusted Travel Companion in Sri Lanka</h3>
                                 <p className='text-center'>
-                                    Experience seamless transportation solutions with LK Taxi, the premier online taxi booking platform in Sri Lanka. Whether you're exploring the city, heading to the airport, or booking a hotel, trust LK Taxi for reliable service, trained drivers, and hassle-free travel experiences tailored to your comfort and convenience. Book your ride today and discover the ultimate in travel ease with LK Taxi.
+                                    Experience seamless transportation solutions with City Taxi, the premier online taxi booking platform in Sri Lanka. Whether you're exploring the city, heading to the airport, or booking a hotel, trust City Taxi for reliable service, trained drivers, and hassle-free travel experiences tailored to your comfort and convenience. Book your ride today and discover the ultimate in travel ease with City Taxi.
                                 </p>
                             </div>
                         </div>

@@ -29,7 +29,7 @@ const Services = () => {
                                         Private Driver
                                     </h5>
                                     <p className='mt-4'>
-                                        Enjoy the luxury of having your own private driver with LK Taxi's exclusive private driver service. Whether you're exploring the city or attending business meetings, our professional drivers will ensure a comfortable and personalized travel experience tailored to your needs.
+                                        Enjoy the luxury of having your own private driver with City Taxi's exclusive private driver service. Whether you're exploring the city or attending business meetings, our professional drivers will ensure a comfortable and personalized travel experience tailored to your needs.
                                     </p>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@ const Services = () => {
                                         Airport Transfer
                                     </h5>
                                     <p className='mt-4'>
-                                        Start or end your journey with ease with LK Taxi's reliable airport transfer service. Our experienced drivers will greet you at the airport and ensure a seamless transition to your destination, allowing you to relax and unwind after your flight.
+                                        Start or end your journey with ease with City Taxi's reliable airport transfer service. Our experienced drivers will greet you at the airport and ensure a seamless transition to your destination, allowing you to relax and unwind after your flight.
                                     </p>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@ const Services = () => {
                                         Luggage Transfer
                                     </h5>
                                     <p className='mt-4'>
-                                        Let LK Taxi take the burden off your shoulders with our convenient luggage transfer service. Whether you're traveling with heavy bags or oversized luggage, our drivers will safely transport your belongings to your desired location, ensuring a stress-free travel experience from start to finish.
+                                        Let City Taxi take the burden off your shoulders with our convenient luggage transfer service. Whether you're traveling with heavy bags or oversized luggage, our drivers will safely transport your belongings to your desired location, ensuring a stress-free travel experience from start to finish.
                                     </p>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@ const Services = () => {
                         </div>
                         <div className="row section-title feature-title-section">
                             <h4>Your Go-To Online Taxi Booking Platform in Sri Lanka</h4>
-                            <p>Welcome to LK Taxi, your premier choice for hassle-free and efficient transportation solutions across Sri Lanka. With our user-friendly online platform, we've revolutionized the way you book taxis, ensuring a seamless experience from start to finish.</p>
+                            <p>Welcome to City Taxi, your premier choice for hassle-free and efficient transportation solutions across Sri Lanka. With our user-friendly online platform, we've revolutionized the way you book taxis, ensuring a seamless experience from start to finish.</p>
                         </div>
 
                         <div className="row feature-content-section">
@@ -81,7 +81,7 @@ const Services = () => {
                                 <div className='sub-about-area'>
                                     <h3>Effortless Booking</h3>
                                     <p>
-                                        Say goodbye to long waiting times and frustrating phone calls. With LK Taxi, you can book your ride in just a few clicks from the comfort of your home or while on the go.
+                                        Say goodbye to long waiting times and frustrating phone calls. With City Taxi, you can book your ride in just a few clicks from the comfort of your home or while on the go.
                                     </p>
                                 </div>
 
@@ -132,9 +132,9 @@ const Services = () => {
                         <div className="overlay overlay-bg"></div>
                         <div className="row align-items-center section-gap">
                             <div className="col-lg-12">
-                                <h3 className='text-center'>LK Taxi: Your Trusted Travel Companion in Sri Lanka</h3>
+                                <h3 className='text-center'>City Taxi: Your Trusted Travel Companion in Sri Lanka</h3>
                                 <p className='text-center'>
-                                    Experience seamless transportation solutions with LK Taxi, the premier online taxi booking platform in Sri Lanka. Whether you're exploring the city, heading to the airport, or booking a hotel, trust LK Taxi for reliable service, trained drivers, and hassle-free travel experiences tailored to your comfort and convenience. Book your ride today and discover the ultimate in travel ease with LK Taxi.
+                                    Experience seamless transportation solutions with City Taxi, the premier online taxi booking platform in Sri Lanka. Whether you're exploring the city, heading to the airport, or booking a hotel, trust City Taxi for reliable service, trained drivers, and hassle-free travel experiences tailored to your comfort and convenience. Book your ride today and discover the ultimate in travel ease with City Taxi.
                                 </p>
                             </div>
                         </div>

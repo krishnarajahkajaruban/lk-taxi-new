@@ -20,10 +20,10 @@ const Home = () => {
                                 <div class="detail-box">
                                     <h2>
                                         About <br />
-                                        LK Taxi
+                                        City Taxi
                                     </h2>
                                     <p>
-                                        At LK Taxi, we're dedicated to providing seamless transportation solutions tailored to your needs. With a focus on reliability, convenience, and exceptional service, we strive to exceed our customers' expectations with every ride. Whether you're exploring the city or heading to the airport, trust LK Taxi for a comfortable and hassle-free journey every time.
+                                        At City Taxi, we're dedicated to providing seamless transportation solutions tailored to your needs. With a focus on reliability, convenience, and exceptional service, we strive to exceed our customers' expectations with every ride. Whether you're exploring the city or heading to the airport, trust City Taxi for a comfortable and hassle-free journey every time.
                                     </p>
 
                                     <ul className="check two-col strong">
@@ -58,9 +58,9 @@ const Home = () => {
                         <div className="overlay overlay-bg"></div>
                         <div className="row align-items-center section-gap">
                             <div className="col-lg-12">
-                                <h3 className='text-center'>LK Taxi: Your Trusted Travel Companion in Sri Lanka</h3>
+                                <h3 className='text-center'>City Taxi: Your Trusted Travel Companion in Sri Lanka</h3>
                                 <p className='text-center'>
-                                    Experience seamless transportation solutions with LK Taxi, the premier online taxi booking platform in Sri Lanka. Whether you're exploring the city, heading to the airport, or booking a hotel, trust LK Taxi for reliable service, trained drivers, and hassle-free travel experiences tailored to your comfort and convenience. Book your ride today and discover the ultimate in travel ease with LK Taxi.
+                                    Experience seamless transportation solutions with City Taxi, the premier online taxi booking platform in Sri Lanka. Whether you're exploring the city, heading to the airport, or booking a hotel, trust City Taxi for reliable service, trained drivers, and hassle-free travel experiences tailored to your comfort and convenience. Book your ride today and discover the ultimate in travel ease with City Taxi.
                                 </p>
                             </div>
                         </div>
