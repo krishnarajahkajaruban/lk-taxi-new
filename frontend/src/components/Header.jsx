@@ -80,7 +80,7 @@ export const Header = () => {
                 <div class="container-fluid">
                     <nav class="navbar navbar-expand-lg custom_nav-container ">
                         <a class="navbar-brand" href="/">
-                            <img src="./images/logo-inner-dark.png" alt="TaxiPark" />
+                            <img src="./images/Taxilogo.png" alt="CityTaxi" />
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>

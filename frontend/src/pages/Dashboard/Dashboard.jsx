@@ -9,6 +9,101 @@ import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import styled, { createGlobalStyle } from 'styled-components';
+import HDashboard from '../Dashboard/booking';
+const GlobalStyle = createGlobalStyle`
+* {
+    font-family: 'Work Sans', sans-serif;
+  }
+  html, body {
+    height: 100%;
+    color: #1a1b1c;
+  }
+  label, a {
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+    transition: border 0.2s;
+    border-bottom: 5px solid rgba(#ffcd37, 0.2);
+    padding: 3px 2px;
+    &:hover {
+      border-bottom-color: #9b59b6;
+    }
+  }
+`;
+const InputRadio = styled.input`
+  display: none;
+`;
+const Layout1 = styled.div`
+  display: grid;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+`;
+const NavLabel = styled.label`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-bottom: 2px solid #ffcd37;
+  background: #ecf0f1;
+  user-select: none;
+  transition: background 0.4s, padding-left 0.2s;
+  padding-left: 0;
+  &:hover {
+    background: #ffcd37;
+    color: #ffffff;
+    padding-left: 20px;
+    span {
+      padding-left: 20px;
+    }
+    svg {
+      opacity: 1;
+    }
+  }
+  span {
+    padding-left: 0px;
+    position: relative;
+  }
+  svg {
+    left: 0;
+    top: -3px;
+    position: absolute;
+    width: 15px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+`;
+const Page = styled.div`
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-column-end: span 3;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+`;
+const PageContents = styled.div`
+  max-width: 100%;
+  width: 500px;
+  margin: 0 auto;
+  > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.2s, transform 0.2s;
+    @for $c from 1 through 20 {
+      &:nth-child(#{$c}) {
+        transition-delay: 0.2s + ($c * 0.2s);
+      }
+    }
+  }
+  `;
+const InputRadioPage = styled(InputRadio) + ' .page';
+
+const InputRadioPageChecked = styled(InputRadio + ':checked') + ' .page';
 
 const customStyles = {
     content: {
@@ -638,7 +733,22 @@ const Dashboard = () => {
     function handleOpenBookingModal() {
         setBookingIsOpen(true);
     }
-
+    const [routeValue, setRoute] = useState("home");
+    const handelroute = (link) => {
+        setRoute(link);
+    }
+    const [arouteValue, setaRoute] = useState("home");
+    const handelaroute = (link) => {
+        setaRoute(link);
+    }
+    const [drouteValue, setdRoute] = useState("");
+    const handeldroute = (link) => {
+        setdRoute(link);
+    }
+    const [orouteValue, setoRoute] = useState("home");
+    const handeloroute = (link) => {
+        setoRoute(link);
+    }
     return (
         <>
             {loading ? <div className="dot-spinner-area">
@@ -659,204 +769,372 @@ const Dashboard = () => {
                             <div class="hero_area">
                                 <Layout />
                             </div>
+                            <GlobalStyle />
+                            {(user?.role === "Customer") && <Layout1>
+                                <Page className="page home-page">
+                                    <PageContents className="page-contents">
+                                    </PageContents>
+                                </Page>
+                                <NavLabel className="nav" htmlFor="home" onClick={() => handelroute("home")} >
+                                    <span >
+                                        Home
+                                    </span>
+                                </NavLabel>
+                                <Page className="page about-page">
+                                    <PageContents className="page-contents">
 
+                                    </PageContents>
+                                </Page>
+                                <NavLabel className="nav" htmlFor="about" onClick={() => handelroute("booking")} >
+                                    <span>
+                                        Booking
+                                    </span>
+                                </NavLabel>
+                                <Page className="page about-page">
+                                    <PageContents className="page-contents">
+
+                                    </PageContents>
+                                </Page>
+                                <NavLabel className="nav" htmlFor="about" onClick={() => handelroute("profile")}>
+                                    <span >
+                                        Setting
+                                    </span>
+                                </NavLabel>
+
+                                <Page className="page contact-page">
+                                    <PageContents className="page-contents">
+                                    </PageContents>
+                                </Page>
+                                <NavLabel className="nav" htmlFor="contact" >
+                                    <span >
+                                        Activities
+                                    </span>
+                                </NavLabel>
+                            </Layout1>}
+                            {(user?.role === "Driver") && <Layout1>
+
+                                <NavLabel className="nav" htmlFor="home" >
+                                    <span onClick={() => handelroute("home")}>Home</span>
+                                </NavLabel>
+                                <NavLabel className="nav" htmlFor="about" onClick={() => handelroute("droute")}>
+                                    <span > Routes </span>
+                                </NavLabel>
+                                <NavLabel className="nav" htmlFor="contact" onClick={() => handelroute("booking")} >
+                                    <span > Booking</span>
+                                </NavLabel>
+                                <NavLabel className="nav" htmlFor="profile" onClick={() => handelroute("profile")}>
+                                    <span > Profile </span>
+                                </NavLabel>
+
+                            </Layout1>}
+                            {(user?.role === "Admin") && <Layout1>
+                                <Page className="page home-page">
+                                    <PageContents className="page-contents">
+                                    </PageContents>
+                                </Page>
+                                <NavLabel className="nav" htmlFor="home" onClick={() => handelroute("home")}>
+                                    <span>
+                                        Home
+                                    </span>
+                                </NavLabel>
+                                <Page className="page about-page">
+                                    <PageContents className="page-contents">
+
+                                    </PageContents>
+                                </Page>
+                                <NavLabel className="nav" htmlFor="about" onClick={() => handelroute("booking")}>
+                                    <span >
+                                        Booking
+                                    </span>
+                                </NavLabel>
+                                <Page className="page contact-page">
+                                    <PageContents className="page-contents">
+                                    </PageContents>
+                                </Page>
+                                <NavLabel className="nav" htmlFor="contact" onClick={() => handelroute("auser")} >
+                                    <span >
+                                        Users
+                                    </span>
+                                </NavLabel>
+                                <Page className="page contact-page">
+                                    <PageContents className="page-contents">
+                                    </PageContents>
+                                </Page>
+                                <NavLabel className="nav" htmlFor="contact" onClick={() => handelroute("profile")}>
+                                    <span >
+                                        About
+                                    </span>
+                                </NavLabel>
+                            </Layout1>}
+                            {(user?.role === "Operator") && <Layout1>
+                                <Page className="page home-page">
+                                    <PageContents className="page-contents">
+                                    </PageContents>
+                                </Page>
+                                <NavLabel className="nav" htmlFor="home" onClick={() => handelroute("home")}>
+                                    <span >
+                                        Home
+                                    </span>
+                                </NavLabel>
+                                <Page className="page about-page">
+                                    <PageContents className="page-contents">
+
+                                    </PageContents>
+                                </Page>
+                                <NavLabel className="nav" htmlFor="about" onClick={() => handelroute("booking")}>
+                                    <span >
+                                        Booking
+                                    </span>
+                                </NavLabel>
+
+                                <Page className="page contact-page">
+                                    <PageContents className="page-contents">
+                                    </PageContents>
+                                </Page>
+                                <NavLabel className="nav" htmlFor="contact" onClick={() => handelroute("profile")}>
+                                    <span >
+                                        About
+                                    </span>
+                                </NavLabel>
+                                <Page className="page contact-page">
+                                    <PageContents className="page-contents">
+                                    </PageContents>
+                                </Page>
+                                <NavLabel className="nav" htmlFor="contact" >
+                                    <span >
+                                        My Activities
+                                    </span>
+                                </NavLabel>
+                            </Layout1>}
                             <section id="car-block" className='login-section section-gap contact_section layout_padding'>
                                 <div className="container">
-                                    <div className="row login-form-section">
-                                        <div class="heading_container">
-                                            <h2>
-                                                <b>PROFILE</b>
-                                            </h2>
-                                        </div>
-                                        <div className="login-form-area">
-                                            <div className="row">
-                                                <div className="col-sm-12 col-lg-12">
-                                                    <div className="row p-2">
-                                                        <div className="col-sm-5">
-                                                            <h6 className='margin-0'><i class="fa fa-user mr-2" aria-hidden="true"></i>User Name</h6>
+                                    {(user?.role === "Customer") && <>
+                                        {(routeValue === "home") && <>
+                                            <HDashboard userRole={user.email} role={user.role} booking={2} total={"750 Rs"} />
+                                        </>
+                                        }
+                                    </>
+                                    }
+                                    {(user?.role === "Driver") && <>
+                                        {(routeValue === "home") && <>
+                                            <HDashboard userRole={user.email} role={user.role} booking={12} total={"120K"} />
+                                        </>
+                                        }
+                                    </>
+                                    }
+                                    {(user?.role === "Operator") && <>
+                                        {(routeValue === "home") && <>
+                                            <HDashboard userRole={user.email} role={user.role} booking={670} total={"7640K Rs"} />
+                                        </>
+                                        }
+                                    </>
+                                    }
+                                    {(user?.role === "Admin") && <>
+                                        {(routeValue === "home") && <>
+                                            <HDashboard userRole={user.email} role={user.role} booking={670} total={"7640K Rs"} />
+                                        </>
+                                        }
+                                    </>
+                                    }
+                                    {(routeValue === "profile") &&
+                                        <div className="row login-form-section">
+
+                                            <div class="heading_container">
+                                                <h2>
+                                                    <b>PROFILE</b>
+                                                </h2>
+                                            </div>
+                                            <div className="login-form-area">
+                                                <div className="row">
+                                                    <div className="col-sm-12 col-lg-12">
+                                                        <div className="row p-2">
+                                                            <div className="col-sm-5">
+                                                                <h6 className='margin-0'><i class="fa fa-user mr-2" aria-hidden="true"></i>User Name</h6>
+                                                            </div>
+                                                            <div className="col-sm-7">
+                                                                <h6 className='margin-0 text-secondary sub-text'>{user.userName}</h6>
+                                                            </div>
                                                         </div>
-                                                        <div className="col-sm-7">
-                                                            <h6 className='margin-0 text-secondary sub-text'>{user.userName}</h6>
+                                                        <hr />
+                                                        <div className="row p-2">
+                                                            <div className="col-sm-5">
+                                                                <h6 className='margin-0'><i class="fa fa-envelope mr-2" aria-hidden="true"></i>E-Mail</h6>
+                                                            </div>
+                                                            <div className="col-sm-7">
+                                                                <h6 className='margin-0 text-secondary sub-text'>{user.email}</h6>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <hr />
-                                                    <div className="row p-2">
-                                                        <div className="col-sm-5">
-                                                            <h6 className='margin-0'><i class="fa fa-envelope mr-2" aria-hidden="true"></i>E-Mail</h6>
+                                                        <hr />
+                                                        <div className="row p-2">
+                                                            <div className="col-sm-5">
+                                                                <h6 className='margin-0'><i class="fa fa-phone mr-2" aria-hidden="true"></i>Mobile</h6>
+                                                            </div>
+                                                            <div className="col-sm-7">
+                                                                <h6 className='margin-0 text-secondary sub-text'>{user.phoneNum}</h6>
+                                                            </div>
                                                         </div>
-                                                        <div className="col-sm-7">
-                                                            <h6 className='margin-0 text-secondary sub-text'>{user.email}</h6>
-                                                        </div>
-                                                    </div>
-                                                    <hr />
-                                                    <div className="row p-2">
-                                                        <div className="col-sm-5">
-                                                            <h6 className='margin-0'><i class="fa fa-phone mr-2" aria-hidden="true"></i>Mobile</h6>
-                                                        </div>
-                                                        <div className="col-sm-7">
-                                                            <h6 className='margin-0 text-secondary sub-text'>{user.phoneNum}</h6>
-                                                        </div>
-                                                    </div>
-                                                    {user?.role === "Driver" &&
-                                                        <>
-                                                            <hr />
-                                                            <div className="row p-2">
-                                                                <div className="col-sm-5">
-                                                                    <h6 className='margin-0'><i class="fa fa-star mr-2" aria-hidden="true"></i>Current Rating</h6>
+                                                        {user?.role === "Driver" &&
+                                                            <>
+                                                                <hr />
+                                                                <div className="row p-2">
+                                                                    <div className="col-sm-5">
+                                                                        <h6 className='margin-0'><i class="fa fa-star mr-2" aria-hidden="true"></i>Current Rating</h6>
+                                                                    </div>
+                                                                    <div className="col-sm-7">
+                                                                        <div className="current-rating">
+                                                                            {renderStars(user?.rating)}
+                                                                        </div>
+                                                                    </div>
+
                                                                 </div>
-                                                                <div className="col-sm-7">
-                                                                    <div className="current-rating">
-                                                                        {renderStars(user?.rating)}
+
+                                                                <hr />
+                                                                <div className="row p-2">
+                                                                    <div className="col-sm-5">
+                                                                        <h6 className='margin-0'><i class="fa fa-check mr-2" aria-hidden="true"></i>Availability</h6>
+                                                                    </div>
+                                                                    <div className="col-sm-7 d-flex justify-content-between align-items-center gap-10">
+                                                                        {user?.availability ?
+                                                                            <h6 className='margin-0 text-success sub-text'><b>Avilable</b></h6>
+                                                                            :
+                                                                            <h6 className='margin-0 text-danger sub-text'><b>Not Avilable</b></h6>
+                                                                        }
+                                                                        <div className='text-right'>
+                                                                            <button type='button' className='btn btn-success no-radius'
+                                                                                onClick={() => handleChangeAvailability(user?.id)}>Change</button>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
+                                                            </>
+                                                        }
 
-                                                            </div>
-
-                                                            <hr />
-                                                            <div className="row p-2">
-                                                                <div className="col-sm-5">
-                                                                    <h6 className='margin-0'><i class="fa fa-check mr-2" aria-hidden="true"></i>Availability</h6>
-                                                                </div>
-                                                                <div className="col-sm-7 d-flex justify-content-between align-items-center gap-10">
-                                                                    {user?.availability ?
-                                                                        <h6 className='margin-0 text-success sub-text'><b>Avilable</b></h6>
-                                                                        :
-                                                                        <h6 className='margin-0 text-danger sub-text'><b>Not Avilable</b></h6>
-                                                                    }
-                                                                    <div className='text-right'>
-                                                                        <button type='button' className='btn btn-success no-radius'
-                                                                            onClick={() => handleChangeAvailability(user?.id)}>Change</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </>
-                                                    }
-
-                                                    <hr />
+                                                        <hr />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="pt-4 w-100">
+                                                <div className="text-right">
+                                                    <button className='btn btn-danger no-radius'
+                                                        onClick={() => {
+                                                            localStorage.removeItem("token");
+                                                            navigate("/log-in")
+                                                        }}>
+                                                        <i class="fa fa-sign-out mr-2" aria-hidden="true"></i>Logout
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="pt-4 w-100">
-                                            <div className="text-right">
-                                                <button className='btn btn-danger no-radius'
-                                                    onClick={() => {
-                                                        localStorage.removeItem("token");
-                                                        navigate("/log-in")
-                                                    }}>
-                                                    <i class="fa fa-sign-out mr-2" aria-hidden="true"></i>Logout
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    }
                                     <div className="row login-form-section mt-5">
                                         <div class="heading_container">
-                                            <h2>
+                                            {/* <h2>
                                                 <b>DASHBOARD</b>
-                                            </h2>
+                                            </h2> */}
                                         </div>
-                                        {allBookings?.length > 0 ?
-                                            <div className="col-sm-12 login-form-area custom-top-radius custom-bottom-radius">
-                                                <div className="">
-                                                    <h4 className='text-center mb-4 margin-0 font-weight-700'>BOOKINGS</h4>
-                                                    {user?.role === "Operator" &&
-                                                        <button className='btn btn-sm btn-success no-radius p-2'
-                                                            data-toggle="modal"
-                                                            data-target=".booking-modal"
-                                                            onClick={handleOpenBookingModal}
-                                                        >
-                                                            <i className='fa fa-plus mr-2'></i>&nbsp;
-                                                            Create Booking
-                                                        </button>}
-                                                    <hr />
-                                                    <div className="row">
-                                                        <div className="col-sm-12">
-                                                            <div class="inner-two-col">
-                                                                <div class="text-page">
-                                                                    <div className="book-table-area table-responsive">
-                                                                        <table className='table table-hover mb-0 bg-white'>
-                                                                            <thead>
-                                                                                <tr className='bg-yellow'>
-                                                                                    <th>No.</th>
-                                                                                    <th>Date</th>
-                                                                                    <th>Time</th>
-                                                                                    <th>From</th>
-                                                                                    <th>To</th>
-                                                                                    <th className='text-right'>Amount</th>
-                                                                                    <th className='text-center'>Status</th>
-                                                                                    <th className='text-center'>Action</th>
-                                                                                </tr>
-                                                                            </thead>
-                                                                            <tbody>
-                                                                                {allBookings.map((book, index) => {
-                                                                                    const cusDetail = book?.customerDetatls;
-                                                                                    const driverDeta = book?.driverDetails;
+                                        {(routeValue === "booking") && <>
+                                            {allBookings?.length > 0 ?
+                                                <div className="col-sm-12 login-form-area custom-top-radius custom-bottom-radius">
+                                                    <div className="">
+                                                        <h4 className='text-center mb-4 margin-0 font-weight-700'>BOOKINGS</h4>
+                                                        {user?.role === "Operator" &&
+                                                            <button className='btn btn-sm btn-success no-radius p-2'
+                                                                data-toggle="modal"
+                                                                data-target=".booking-modal"
+                                                                onClick={handleOpenBookingModal}
+                                                            >
+                                                                <i className='fa fa-plus mr-2'></i>&nbsp;
+                                                                Create Booking
+                                                            </button>}
+                                                        <hr />
+                                                        <div className="row">
+                                                            <div className="col-sm-12">
+                                                                <div class="inner-two-col">
+                                                                    <div class="text-page">
+                                                                        <div className="book-table-area table-responsive">
+                                                                            <table className='table table-hover mb-0 bg-white'>
+                                                                                <thead>
+                                                                                    <tr className='bg-yellow'>
+                                                                                        <th>No.</th>
+                                                                                        <th>Date</th>
+                                                                                        <th>Time</th>
+                                                                                        <th>From</th>
+                                                                                        <th>To</th>
+                                                                                        <th className='text-right'>Amount</th>
+                                                                                        <th className='text-center'>Status</th>
+                                                                                        <th className='text-center'>Action</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    {allBookings.map((book, index) => {
+                                                                                        const cusDetail = book?.customerDetatls;
+                                                                                        const driverDeta = book?.driverDetails;
 
-                                                                                    return (
-                                                                                        <tr>
-                                                                                            <td>{index + 1}.</td>
-                                                                                            <td>{book?.bookingDetails?.date}</td>
-                                                                                            <td>{book?.bookingDetails?.time}</td>
-                                                                                            <td className='text-capitalize'>{book?.bookingDetails?.from}</td>
-                                                                                            <td className='text-capitalize'>{book?.bookingDetails?.to}</td>
-                                                                                            <td className='text-right'>{book?.bookingDetails?.money}</td>
-                                                                                            <td className='text-center'>
-                                                                                                {/* <span className="booking-status pending">Pending</span> */}
-                                                                                                <span className={`booking-status ${book?.bookingDetails?.status === "Completed" ? "completed" : "pending"}`}>{book?.bookingDetails?.status}</span>
-                                                                                            </td>
-                                                                                            <td className='text-center whitespace-nowrap'>
-                                                                                                <button className='btn view-btn btn-info mb-0 no-radius'
-                                                                                                    onClick={() => handleBookingUser(cusDetail, driverDeta)}
-                                                                                                    data-toggle="modal"
-                                                                                                    data-target=".booking-view-modal"
-                                                                                                >
-                                                                                                    <i className='fa fa-eye'></i>
-                                                                                                </button>
+                                                                                        return (
+                                                                                            <tr>
+                                                                                                <td>{index + 1}.</td>
+                                                                                                <td>{book?.bookingDetails?.date}</td>
+                                                                                                <td>{book?.bookingDetails?.time}</td>
+                                                                                                <td className='text-capitalize'>{book?.bookingDetails?.from}</td>
+                                                                                                <td className='text-capitalize'>{book?.bookingDetails?.to}</td>
+                                                                                                <td className='text-right'>{book?.bookingDetails?.money}</td>
+                                                                                                <td className='text-center'>
+                                                                                                    {/* <span className="booking-status pending">Pending</span> */}
+                                                                                                    <span className={`booking-status ${book?.bookingDetails?.status === "Completed" ? "completed" : "pending"}`}>{book?.bookingDetails?.status}</span>
+                                                                                                </td>
+                                                                                                <td className='text-center whitespace-nowrap'>
+                                                                                                    <button className='btn view-btn btn-info mb-0 no-radius'
+                                                                                                        onClick={() => handleBookingUser(cusDetail, driverDeta)}
+                                                                                                        data-toggle="modal"
+                                                                                                        data-target=".booking-view-modal"
+                                                                                                    >
+                                                                                                        <i className='fa fa-eye'></i>
+                                                                                                    </button>
 
-                                                                                                {(user?.role === "Driver" && book?.bookingDetails?.status === "Pending") &&
-                                                                                                    <>
-                                                                                                        <button className='btn view-btn btn-success ml-2 mb-0 no-radius'
-                                                                                                            onClick={() => handleConfirm(book?.bookingDetails?.id)}>
-                                                                                                            Confirm
-                                                                                                        </button>
-                                                                                                        <button className='btn view-btn btn-danger ml-2 no-radius'
-                                                                                                            onClick={() => handleReject(book?.bookingDetails?.id)}
-                                                                                                        >
-                                                                                                            Reject
-                                                                                                        </button>
-                                                                                                    </>
-                                                                                                }
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    )
-                                                                                })}
+                                                                                                    {(user?.role === "Driver" && book?.bookingDetails?.status === "Pending") &&
+                                                                                                        <>
+                                                                                                            <button className='btn view-btn btn-success ml-2 mb-0 no-radius'
+                                                                                                                onClick={() => handleConfirm(book?.bookingDetails?.id)}>
+                                                                                                                Confirm
+                                                                                                            </button>
+                                                                                                            <button className='btn view-btn btn-danger ml-2 no-radius'
+                                                                                                                onClick={() => handleReject(book?.bookingDetails?.id)}
+                                                                                                            >
+                                                                                                                Reject
+                                                                                                            </button>
+                                                                                                        </>
+                                                                                                    }
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        )
+                                                                                    })}
 
-                                                                            </tbody>
-                                                                        </table>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            :
-                                            <div className="no-data-created-area">
-                                                <div className='no-data-created'>
-                                                    {user?.role === "Operator" &&
-                                                        <button className='btn btn-sm btn-success no-radius'
-                                                            data-toggle="modal"
-                                                            data-target=".booking-modal"
-                                                            onClick={handleOpenBookingModal}
-                                                        >
-                                                            <i className='fa fa-plus mr-2'></i>&nbsp;
-                                                            Create Booking
-                                                        </button>}
-                                                    <div className='no-data-text'>No bookings found!</div>
+                                                :
+                                                <div className="no-data-created-area">
+                                                    <div className='no-data-created'>
+                                                        {user?.role === "Operator" &&
+                                                            <button className='btn btn-sm btn-success no-radius'
+                                                                data-toggle="modal"
+                                                                data-target=".booking-modal"
+                                                                onClick={handleOpenBookingModal}
+                                                            >
+                                                                <i className='fa fa-plus mr-2'></i>&nbsp;
+                                                                Create Booking
+                                                            </button>}
+                                                        <div className='no-data-text'>No bookings found!</div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        }
-
+                                            }
+                                        </>}
+                                        {(routeValue === "auser") && <>
                                         {(user?.role === "Admin") &&
                                             <div className="col-sm-12 login-form-area mt-4">
                                                 <div className="">
@@ -934,7 +1212,7 @@ const Dashboard = () => {
                                                 </div>
                                             </div>
                                         }
-
+       </>}
                                         {(user?.role === "Admin" && allUsers?.length === 0) &&
                                             <div className="no-data-created-area">
                                                 <div className='no-data-created'>
@@ -944,126 +1222,136 @@ const Dashboard = () => {
                                         }
 
                                         {(user?.role === "Admin") &&
-                                            <div className="col-sm-12 login-form-area mt-4">
-                                                <div className="">
-                                                    <h4 className='text-center mb-4 margin-0 font-weight-700'>CONTACT US MESSAGES</h4>
-                                                    {contactUs?.length > 0 &&
-                                                        <div className="row">
-                                                            <div className="col-sm-12">
-                                                                <div class="inner-two-col">
-                                                                    <div class="text-page">
-                                                                        <div className="book-table-area table-responsive">
-                                                                            <table className='table table-striped mb-0 bg-white'>
-                                                                                <thead>
-                                                                                    <tr className='bg-yellow'>
-                                                                                        <th>No.</th>
-                                                                                        <th>Name</th>
-                                                                                        <th>E-Mail</th>
-                                                                                        <th>Message</th>
-                                                                                    </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    {contactUs.map((msg, index) => {
-                                                                                        return (
-                                                                                            <tr>
-                                                                                                <td>{index + 1}.</td>
-                                                                                                <td className='text-capitalize'>{msg?.name}</td>
-                                                                                                <td>{msg?.email}</td>
-                                                                                                <td>{msg?.msg}</td>
-                                                                                            </tr>
-                                                                                        )
-                                                                                    })}
-                                                                                </tbody>
-                                                                            </table>
+                                            <>    {(arouteValue === "profile") && <>
+                                                <div className="col-sm-12 login-form-area mt-4">
+                                                    <div className="">
+                                                        <h4 className='text-center mb-4 margin-0 font-weight-700'>CONTACT US MESSAGES</h4>
+                                                        {contactUs?.length > 0 &&
+                                                            <div className="row">
+                                                                <div className="col-sm-12">
+                                                                    <div class="inner-two-col">
+                                                                        <div class="text-page">
+                                                                            <div className="book-table-area table-responsive">
+                                                                                <table className='table table-striped mb-0 bg-white'>
+                                                                                    <thead>
+                                                                                        <tr className='bg-yellow'>
+                                                                                            <th>No.</th>
+                                                                                            <th>Name</th>
+                                                                                            <th>E-Mail</th>
+                                                                                            <th>Message</th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        {contactUs.map((msg, index) => {
+                                                                                            return (
+                                                                                                <tr>
+                                                                                                    <td>{index + 1}.</td>
+                                                                                                    <td className='text-capitalize'>{msg?.name}</td>
+                                                                                                    <td>{msg?.email}</td>
+                                                                                                    <td>{msg?.msg}</td>
+                                                                                                </tr>
+                                                                                            )
+                                                                                        })}
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </>}
+                                            </>
+                                        }
+
+                                        {(user?.role === "Admin" && contactUs?.length === 0) &&
+
+                                            <> {(arouteValue === "profile") && <>
+                                                <div className="no-data-created-area">
+                                                    <div className='no-data-created'>
+                                                        <div className='no-data-text'>No contact message found!</div>
+                                                    </div>
+                                                </div>
+                                            </>}
+                                            </>}
+
+                                        {(user.role === "Driver") &&
+                                            <>
+                                                {(routeValue === "droute") && <>
+                                                    <div className="col-sm-12 login-form-area mt-4 custom-top-radius">
+                                                        <div className="">
+                                                            <div className="d-flex align-items-center justify-content-between mb-3">
+                                                                <h4 className='text-center mb-0 font-weight-700 margin-0'>ROUTE CHARGES</h4>
+                                                                <hr />
+                                                                <button className='btn btn-sm btn-success no-radius p-2'
+                                                                    onClick={handleOpenRouteModal}
+                                                                    data-toggle="modal"
+                                                                    data-target=".route-modal"
+                                                                >
+                                                                    <i className='fa fa-plus mr-2'></i>&nbsp;
+                                                                    Create New
+                                                                </button>
+                                                            </div>
+
+                                                            <div className="row">
+                                                                <div className="col-sm-12">
+                                                                    <div class="inner-two-col">
+                                                                        <div class="text-page">
+                                                                            <div className="book-table-area table-responsive">
+                                                                                <table className='table table-hover mb-0 bg-white'>
+                                                                                    <thead>
+                                                                                        <tr className='bg-yellow'>
+                                                                                            <th>No.</th>
+                                                                                            <th>From</th>
+                                                                                            <th>To</th>
+                                                                                            <th className='text-right'>Amount</th>
+                                                                                            <th className='text-center'>Action</th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    {allRoutes?.length > 0 ?
+                                                                                        <tbody>
+                                                                                            {allRoutes?.map((routesCharge, index) => {
+                                                                                                return (
+                                                                                                    <tr>
+                                                                                                        <td>{index + 1}.</td>
+                                                                                                        <td className='text-capitalize'>{routesCharge?.from}</td>
+                                                                                                        <td className='text-capitalize'>{routesCharge?.to}</td>
+                                                                                                        <td className='text-right'>{routesCharge?.money}</td>
+                                                                                                        <td className='text-center'>
+                                                                                                            <button className='btn view-btn btn-success no-radius ml-2 mb-0'
+                                                                                                                onClick={() => handleEdit(routesCharge)} data-toggle="modal"
+                                                                                                                data-target=".route-modal">
+                                                                                                                Edit
+                                                                                                            </button>
+                                                                                                            <button className='btn view-btn btn-danger no-radius ml-2 mb-0'
+                                                                                                                onClick={() => handleDelete(routesCharge?._id)}
+                                                                                                            >
+                                                                                                                Delete
+                                                                                                            </button>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                )
+                                                                                            })}
+
+                                                                                        </tbody> :
+                                                                                        <tr>
+                                                                                            <td colSpan={4} className='text-center text-secondary'>No Data found!</td>
+                                                                                        </tr>
+                                                                                    }
+
+                                                                                </table>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    }
-                                                </div>
-                                            </div>
-                                        }
-
-                                        {(user?.role === "Admin" && contactUs?.length === 0) &&
-                                            <div className="no-data-created-area">
-                                                <div className='no-data-created'>
-                                                    <div className='no-data-text'>No contact message found!</div>
-                                                </div>
-                                            </div>
-                                        }
-
-                                        {(user.role === "Driver") &&
-                                            <div className="col-sm-12 login-form-area mt-4 custom-top-radius">
-                                                <div className="">
-                                                    <div className="d-flex align-items-center justify-content-between mb-3">
-                                                        <h4 className='text-center mb-0 font-weight-700 margin-0'>ROUTE CHARGES</h4>
-                                                        <hr />
-                                                        <button className='btn btn-sm btn-success no-radius p-2'
-                                                            onClick={handleOpenRouteModal}
-                                                            data-toggle="modal"
-                                                            data-target=".route-modal"
-                                                        >
-                                                            <i className='fa fa-plus mr-2'></i>&nbsp;
-                                                            Create New
-                                                        </button>
                                                     </div>
-
-                                                    <div className="row">
-                                                        <div className="col-sm-12">
-                                                            <div class="inner-two-col">
-                                                                <div class="text-page">
-                                                                    <div className="book-table-area table-responsive">
-                                                                        <table className='table table-hover mb-0 bg-white'>
-                                                                            <thead>
-                                                                                <tr className='bg-yellow'>
-                                                                                    <th>No.</th>
-                                                                                    <th>From</th>
-                                                                                    <th>To</th>
-                                                                                    <th className='text-right'>Amount</th>
-                                                                                    <th className='text-center'>Action</th>
-                                                                                </tr>
-                                                                            </thead>
-                                                                            {allRoutes?.length > 0 ?
-                                                                                <tbody>
-                                                                                    {allRoutes?.map((routesCharge, index) => {
-                                                                                        return (
-                                                                                            <tr>
-                                                                                                <td>{index + 1}.</td>
-                                                                                                <td className='text-capitalize'>{routesCharge?.from}</td>
-                                                                                                <td className='text-capitalize'>{routesCharge?.to}</td>
-                                                                                                <td className='text-right'>{routesCharge?.money}</td>
-                                                                                                <td className='text-center'>
-                                                                                                    <button className='btn view-btn btn-success no-radius ml-2 mb-0'
-                                                                                                        onClick={() => handleEdit(routesCharge)} data-toggle="modal"
-                                                                                                        data-target=".route-modal">
-                                                                                                        Edit
-                                                                                                    </button>
-                                                                                                    <button className='btn view-btn btn-danger no-radius ml-2 mb-0'
-                                                                                                        onClick={() => handleDelete(routesCharge?._id)}
-                                                                                                    >
-                                                                                                        Delete
-                                                                                                    </button>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        )
-                                                                                    })}
-
-                                                                                </tbody> :
-                                                                                <tr>
-                                                                                    <td colSpan={4} className='text-center text-secondary'>No Data found!</td>
-                                                                                </tr>
-                                                                            }
-
-                                                                        </table>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        }
+                                                </>
+                                                }
+                                            </>}
                                     </div>
                                 </div>
                             </section>

@@ -76,9 +76,9 @@ const Register = () => {
                         </div>
                         <div className="row">
                             <div className="col-12 col-lg-6 col-md-6">
-                                <h4><b>Create Your LK Taxi Account</b></h4>
+                                <h4><b>Create Your City Taxi Account</b></h4>
                                 <p className='mt-5'>
-                                    Join the LK Taxi community today and unlock a world of convenient transportation solutions. By registering for an account, you gain access to exclusive features, personalized services, and seamless booking experiences. Sign up now to start enjoying the benefits of being an LK Taxi member. It's quick, easy, and free. Simply fill out the registration form below to get started on your journey with us. Welcome aboard!
+                                    Join the City Taxi community today and unlock a world of convenient transportation solutions. By registering for an account, you gain access to exclusive features, personalized services, and seamless booking experiences. Sign up now to start enjoying the benefits of being an City Taxi member. It's quick, easy, and free. Simply fill out the registration form below to get started on your journey with us. Welcome aboard!
                                 </p>
                             </div>
                             <div className="col-12 col-lg-6 col-md-6">

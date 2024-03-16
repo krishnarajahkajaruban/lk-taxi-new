@@ -11,7 +11,7 @@ export const Footer = () => {
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col-ms-6">
                             <h4>About us</h4>
-                            <p>Experience hassle-free travel with LK Taxi, your trusted online taxi booking service in Sri Lanka. Our commitment to reliability and convenience ensures seamless journeys for every passenger. Trust LK Taxi for efficient booking, professional drivers, and a comfortable ride every time.</p>
+                            <p>Experience hassle-free travel with City Taxi, your trusted online taxi booking service in Sri Lanka. Our commitment to reliability and convenience ensures seamless journeys for every passenger. Trust City Taxi for efficient booking, professional drivers, and a comfortable ride every time.</p>
 
                         </div>
                         <div class="col-lg-5 col-md-5 hidden-md hidden-sm hidden-xs hidden-ms">
@@ -33,7 +33,7 @@ export const Footer = () => {
 
                             <ul class="address">
                                 <li><span class="fa fa-phone"></span>077-000-0000</li>
-                                <li><span class="fa fa-envelope"></span><a href="#">lktaxi@gmail.com</a></li>
+                                <li><span class="fa fa-envelope"></span><a href="#">Citytaxi@gmail.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -42,7 +42,7 @@ export const Footer = () => {
 
             <footer>
                 <div class="container">
-                    <a href="#">LK Taxi</a> {currentYear} © All Rights Reserved
+                    <a href="#">City Taxi</a> {currentYear} © All Rights Reserved
                     <a href="#" class="go-top hidden-xs hidden-ms"></a>
                 </div>
             </footer> */}
@@ -52,9 +52,9 @@ export const Footer = () => {
                 <div class="container">
                     <div className='footer-logo-section'>
                         <a href='/'>
-                            <img src="./images/logo-inner.png" alt="TaxiPark" />
+                            <img src="./images/Taxilogo.png" alt="TaxiPark" />
                         </a>
-                        <p>Experience hassle-free travel with LK Taxi, your trusted online taxi booking service in Sri Lanka. Our commitment to reliability and convenience ensures seamless journeys for every passenger. Trust LK Taxi for efficient booking, professional drivers, and a comfortable ride every time.</p>
+                        <p>Experience hassle-free travel with City Taxi, your trusted online taxi booking service in Sri Lanka. Our commitment to reliability and convenience ensures seamless journeys for every passenger. Trust City Taxi for efficient booking, professional drivers, and a comfortable ride every time.</p>
                     </div>
 
                     <div class="box">
@@ -94,7 +94,7 @@ export const Footer = () => {
                             <div>
                                 <a href="#">
                                     <img src="./images/email.png" alt="" />
-                                    <span className='ml-1 footer-text'>lktaxi@gmail.com</span>
+                                    <span className='ml-1 footer-text'>Citytaxi@gmail.com</span>
                                 </a>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ export const Footer = () => {
                 <div class="container">
                     <p>
                         &copy; {currentYear} All Rights Reserved By
-                        <a href="#"> LK Taxi</a>
+                        <a href="#"> City Taxi</a>
                     </p>
                 </div>
             </section>
